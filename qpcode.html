@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+
+            /* Category Colors */
+            --common: #3b82f6;
+            --lang: #f59e0b;
+            --sci: #10b981;
+            --hum: #a855f7;
+            --tech: #ef4444;
+            --ach: #06b6d4;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Persistent Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .navbar a:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .active {
+            opacity: 1 !important;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+        }
+
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        /* Eligibility Banner */
+        .eligibility-banner {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 6px solid var(--primary);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .eligibility-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .eligibility-item p {
+            margin: 5px 0 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Section Cards */
+        .section-card {
+            margin-top: 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .section-header {
+            padding: 15px 25px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bg-common {
+            background: var(--common);
+        }
+
+        .bg-lang {
+            background: var(--lang);
+        }
+
+        .bg-sci {
+            background: var(--sci);
+        }
+
+        .bg-hum-tech {
+            background: var(--hum);
+        }
+
+        .bg-tech {
+            background: var(--tech);
+        }
+
+        .bg-ach {
+            background: var(--ach);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f8fafc;
+            color: var(--secondary);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            padding: 12px 25px;
+            text-align: left;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        td {
+            padding: 18px 25px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9rem;
+        }
+
+        tr:hover td {
+            background-color: #fcfcfd;
+        }
+
+        .qp-badge {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/examscheme.html">Part 2: Exam Scheme</a>
+        <a href="/qpcode.html" class="active">Part 3: QP Codes</a>
+        <a href="/cities.html">Part 4: Cities</a>
+    </nav>
+
+    <div class="container">
+        <h1>Codes & Eligibility</h1>
+        <p style="text-align: center; color: var(--secondary); margin-bottom: 10px;">Technical Discipline Directory for
+            CUET (PG) 2026</p>
+
+        <div class="eligibility-banner">
+            <div class="eligibility-item">
+                <strong>🎓 Degree Status</strong>
+                <p>BCA, B.Sc (CS/IT), B.Tech or equivalent</p>
+            </div>
+            <div class="eligibility-item">
+                <strong>🎂 Age Limit</strong>
+                <p>No NTA Upper Limit</p>
+            </div>
+            <div class="eligibility-item">
+                <strong>📝 Max Papers</strong>
+                <p>Select up to 04 Codes</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header bg-common">
+                <span>General & Professional Programmes </span>
+                <small>COQP Series</small>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>QP Code</th>
+                            <th>Programme / Courses / Discipline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><span class="qp-badge">COQP01</span></td>
+                            <td>Agri-Business Management etc.</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span class="qp-badge">COQP02</span></td>
+                            <td>Applied Geography / Geoinformatics</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span class="qp-badge">COQP03</span></td>
+                            <td>B.Ed., B.Ed.-M.Ed. Integrated, B.Ed. (HI), B.Ed. (ID), B.Ed. (VI), Lifelong Learning and
+                                Extension etc.</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span class="qp-badge">COQP04</span></td>
+                            <td>B.Ed. Humanities and Social Sciences</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><span class="qp-badge">COQP05</span></td>
+                            <td>B.Ed. Languages</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><span class="qp-badge">COQP06</span></td>
+                            <td>B.Ed. Science</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><span class="qp-badge">COQP07</span></td>
+                            <td>B.Ed. Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><span class="qp-badge">COQP08</span></td>
+                            <td>Commerce</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><span class="qp-badge">COQP09</span></td>
+                            <td>Disaster Studies</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="qp-badge">COQP10</span></td>
+                            <td>Economics</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="qp-badge">COQP11</span></td>
+                            <td>General</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="qp-badge">COQP12</span></td>
+                            <td>General - Management</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="qp-badge">COQP13</span></td>
+                            <td>Library and Information Science</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="qp-badge">COQP14</span></td>
+                            <td>L.L.M.</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="qp-badge">COQP15</span></td>
+                            <td>M.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><span class="qp-badge">COQP16</span></td>
+                            <td>M.A. Education</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td><span class="qp-badge">COQP17</span></td>
+                            <td>Mass Communication and Journalism</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><span class="qp-badge">COQP18</span></td>
+                            <td>Physical Education</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="qp-badge">COQP19</span></td>
+                            <td>Public Health</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="qp-badge">COQP20</span></td>
+                            <td>Sports - Physiology, Biochemistry, Nutrition, Biomechanics etc.</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="qp-badge">COQP21</span></td>
+                            <td>Yoga</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="qp-badge">COQP22</span></td>
+                            <td>Healthcare & Hospital Management</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header bg-lang">
+                <span>Language & Linguistic Studies </span>
+                <small>LAQP Series</small>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>QP Code</th>
+                            <th>Programme / Courses / Discipline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><span class="qp-badge">LAQP01</span></td>
+                            <td>English</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span class="qp-badge">LAQP02</span></td>
+                            <td>Hindi</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span class="qp-badge">LAQP03</span></td>
+                            <td>Sanskrit</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span class="qp-badge">LAQP04</span></td>
+                            <td>Linguistics</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><span class="qp-badge">LAQP05</span></td>
+                            <td>Arabic</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><span class="qp-badge">LAQP06</span></td>
+                            <td>Assamese</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><span class="qp-badge">LAQP07</span></td>
+                            <td>Bengali</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><span class="qp-badge">LAQP08</span></td>
+                            <td>Bhutia</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><span class="qp-badge">LAQP09</span></td>
+                            <td>Chinese</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="qp-badge">LAQP10</span></td>
+                            <td>French</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="qp-badge">LAQP11</span></td>
+                            <td>Garo</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="qp-badge">LAQP12</span></td>
+                            <td>German</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="qp-badge">LAQP13</span></td>
+                            <td>Gujarati</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="qp-badge">LAQP14</span></td>
+                            <td>Hispanic</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="qp-badge">LAQP15</span></td>
+                            <td>Japanese</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><span class="qp-badge">LAQP16</span></td>
+                            <td>Kannada</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td><span class="qp-badge">LAQP17</span></td>
+                            <td>Kashmiri</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><span class="qp-badge">LAQP18</span></td>
+                            <td>Khasi</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="qp-badge">LAQP19</span></td>
+                            <td>Kokborok</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="qp-badge">LAQP20</span></td>
+                            <td>Korean</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="qp-badge">LAQP21</span></td>
+                            <td>Lepcha</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="qp-badge">LAQP22</span></td>
+                            <td>Limbu</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td><span class="qp-badge">LAQP23</span></td>
+                            <td>Malayalam</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td><span class="qp-badge">LAQP24</span></td>
+                            <td>Manipuri</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td><span class="qp-badge">LAQP25</span></td>
+                            <td>Marathi</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td><span class="qp-badge">LAQP26</span></td>
+                            <td>Nepali</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td><span class="qp-badge">LAQP27</span></td>
+                            <td>Odia</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td><span class="qp-badge">LAQP28</span></td>
+                            <td>Pali</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td><span class="qp-badge">LAQP29</span></td>
+                            <td>Pashto</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td><span class="qp-badge">LAQP30</span></td>
+                            <td>Persian</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td><span class="qp-badge">LAQP31</span></td>
+                            <td>Prakrit</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td><span class="qp-badge">LAQP32</span></td>
+                            <td>Prayojanmoolak Hindi (Patrakarita)</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td><span class="qp-badge">LAQP33</span></td>
+                            <td>Punjabi</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td><span class="qp-badge">LAQP34</span></td>
+                            <td>Russian</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td><span class="qp-badge">LAQP35</span></td>
+                            <td>Tamil</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td><span class="qp-badge">LAQP36</span></td>
+                            <td>Telugu</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td><span class="qp-badge">LAQP37</span></td>
+                            <td>Urdu</td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td><span class="qp-badge">LAQP38</span></td>
+                            <td>Urdu Journalism</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td><span class="qp-badge">LAQP39</span></td>
+                            <td>Indo-Tibetan</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td><span class="qp-badge">LAQP40</span></td>
+                            <td>Santali</td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td><span class="qp-badge">LAQP41</span></td>
+                            <td>Italian</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header bg-sci">
+                <span>Science & Technology </span>
+                <small>SCQP Series</small>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>QP Code</th>
+                            <th>Programme / Courses / Discipline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><span class="qp-badge">SCQP01</span></td>
+                            <td>Agricultural Science</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span class="qp-badge">SCQP02</span></td>
+                            <td>Agro-forestry</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span class="qp-badge">SCQP03</span></td>
+                            <td>Microbiology/Applied Microbiology</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span class="qp-badge">SCQP04</span></td>
+                            <td>Architecture and Planning</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><span class="qp-badge">SCQP05</span></td>
+                            <td>Biochemistry</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><span class="qp-badge">SCQP06</span></td>
+                            <td>Bioinformatics</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><span class="qp-badge">SCQP07</span></td>
+                            <td>Botany</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><span class="qp-badge">SCQP08</span></td>
+                            <td>Chemistry</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><span class="qp-badge">SCQP09</span></td>
+                            <td>Computer Science / Information Technology / Artificial Intelligence</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="qp-badge">SCQP10</span></td>
+                            <td>Criminology</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="qp-badge">SCQP11</span></td>
+                            <td>Environmental Sciences/Studies</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="qp-badge">SCQP12</span></td>
+                            <td>Food Science and Technology</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="qp-badge">SCQP13</span></td>
+                            <td>Forensic Science</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="qp-badge">SCQP14</span></td>
+                            <td>Geology / Applied Geology</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="qp-badge">SCQP15</span></td>
+                            <td>Geophysics</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><span class="qp-badge">SCQP16</span></td>
+                            <td>Horticulture</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td><span class="qp-badge">SCQP17</span></td>
+                            <td>Life Science</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><span class="qp-badge">SCQP18</span></td>
+                            <td>Material Science</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="qp-badge">SCQP19</span></td>
+                            <td>Mathematics, Applied Mathematics, Electronics</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="qp-badge">SCQP20</span></td>
+                            <td>Medical Laboratory Technology, Medical Physics, etc.</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="qp-badge">SCQP21</span></td>
+                            <td>MPT/Master in Respiratory Theory (MRT)</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="qp-badge">SCQP22</span></td>
+                            <td>Nanoscience/Integrative Biosciences</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td><span class="qp-badge">SCQP23</span></td>
+                            <td>Pharmacy</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td><span class="qp-badge">SCQP24</span></td>
+                            <td>Physics</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td><span class="qp-badge">SCQP25</span></td>
+                            <td>Plant Biotechnology</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td><span class="qp-badge">SCQP26</span></td>
+                            <td>Soil Science</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td><span class="qp-badge">SCQP27</span></td>
+                            <td>Statistics</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td><span class="qp-badge">SCQP28</span></td>
+                            <td>Zoology</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td><span class="qp-badge">SCQP29</span></td>
+                            <td>Atmospheric Science</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td><span class="qp-badge">SCQP30</span></td>
+                            <td>Animal Science (Poultry)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header bg-hum-tech">
+                <span>Humanities & Social Sciences </span>
+                <small>HUQP Series</small>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>QP Code</th>
+                            <th>Programme / Courses / Discipline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><span class="qp-badge">HUQP01</span></td>
+                            <td>Ancient Indian History, Culture and Archaeology</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span class="qp-badge">HUQP02</span></td>
+                            <td>Anthropology</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span class="qp-badge">HUQP03</span></td>
+                            <td>Applied Arts</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span class="qp-badge">HUQP04</span></td>
+                            <td>Art and Aesthetics</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><span class="qp-badge">HUQP05</span></td>
+                            <td>Dance</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><span class="qp-badge">HUQP06</span></td>
+                            <td>Development and Labour Studies</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><span class="qp-badge">HUQP07</span></td>
+                            <td>Fine Arts</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><span class="qp-badge">HUQP08</span></td>
+                            <td>Geography</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><span class="qp-badge">HUQP09</span></td>
+                            <td>History</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="qp-badge">HUQP10</span></td>
+                            <td>History of Art</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="qp-badge">HUQP11</span></td>
+                            <td>Home Science</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="qp-badge">HUQP12</span></td>
+                            <td>Music- Karnatak/Carnatic</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="qp-badge">HUQP13</span></td>
+                            <td>Museology</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="qp-badge">HUQP14</span></td>
+                            <td>Music – Hindustani</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="qp-badge">HUQP15</span></td>
+                            <td>Painting</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><span class="qp-badge">HUQP16</span></td>
+                            <td>Philosophy</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td><span class="qp-badge">HUQP17</span></td>
+                            <td>Plastic Arts</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><span class="qp-badge">HUQP18</span></td>
+                            <td>Political Science</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="qp-badge">HUQP19</span></td>
+                            <td>Pottery and Ceramics</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="qp-badge">HUQP20</span></td>
+                            <td>Psychology / Applied Psychology</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="qp-badge">HUQP21</span></td>
+                            <td>Social Work</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="qp-badge">HUQP22</span></td>
+                            <td>Sociology</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td><span class="qp-badge">HUQP23</span></td>
+                            <td>Textile Design</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td><span class="qp-badge">HUQP24</span></td>
+                            <td>Theatre</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td><span class="qp-badge">HUQP25</span></td>
+                            <td>Music- Percussion</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td><span class="qp-badge">HUQP26</span></td>
+                            <td>Rabindra Sangit</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header bg-hum-tech">
+                <span>M.Tech & Higher Engineering Sciences </span>
+                <small>MTQP Series</small>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>QP Code</th>
+                            <th>Programme / Courses / Discipline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><span class="qp-badge">MTQP01</span></td>
+                            <td>Chemical, Thermal and Polymer Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span class="qp-badge">MTQP02</span></td>
+                            <td>Civil, Structural and Transport Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span class="qp-badge">MTQP03</span></td>
+                            <td>Dairy Technology</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span class="qp-badge">MTQP04</span></td>
+                            <td>Data Science, Artificial Intelligence, Cyber Security and Computer Science,
+                                Engineering/Technology</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><span class="qp-badge">MTQP05</span></td>
+                            <td>Electronics, Communication and Information Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><span class="qp-badge">MTQP06</span></td>
+                            <td>Food Engineering and Technology</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><span class="qp-badge">MTQP07</span></td>
+                            <td>Mechanical Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><span class="qp-badge">MTQP08</span></td>
+                            <td>Nano Science/Nano Technology</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><span class="qp-badge">MTQP09</span></td>
+                            <td>Nanoelectronics/Material Sciences</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="qp-badge">MTQP10</span></td>
+                            <td>Electrical, Power, and Energy Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="qp-badge">MTQP11</span></td>
+                            <td>Water Engineering and Management</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="qp-badge">MTQP12</span></td>
+                            <td>Textile Engineering</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header bg-ach">
+                <span>Acharya & Sanskrit Studies </span>
+                <small>ACQP Series</small>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>QP Code</th>
+                            <th>Programme / Courses / Discipline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><span class="qp-badge">ACQP01</span></td>
+                            <td>Shiksha Shastri B.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span class="qp-badge">ACQP02</span></td>
+                            <td>Shiksha Acharya M.Ed.</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span class="qp-badge">ACQP03</span></td>
+                            <td>Agama</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span class="qp-badge">ACQP04</span></td>
+                            <td>Baudha Darshan / Buddhist Studies (Trilingual - Hindi/Sanskrit/English)</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><span class="qp-badge">ACQP05</span></td>
+                            <td>Dharma Shastra, Vastu and Paurohitya</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><span class="qp-badge">ACQP06</span></td>
+                            <td>Dharma Vijnan</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><span class="qp-badge">ACQP07</span></td>
+                            <td>Dharmashastra</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><span class="qp-badge">ACQP08</span></td>
+                            <td>Hindu Studies (Bilingual - Hindi/English)</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><span class="qp-badge">ACQP09</span></td>
+                            <td>Indian Knowledge System (Trilingual - Hindi/Sanskrit/English)</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="qp-badge">ACQP10</span></td>
+                            <td>Jain Darshan</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="qp-badge">ACQP11</span></td>
+                            <td>Jyotish - Falit</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="qp-badge">ACQP12</span></td>
+                            <td>Jyotish - Ganit</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="qp-badge">ACQP13</span></td>
+                            <td>Krishna Yajurveda</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="qp-badge">ACQP14</span></td>
+                            <td>Nyaya Vaisheshika</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="qp-badge">ACQP15</span></td>
+                            <td>Phalita and Siddantha Jyotisha</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><span class="qp-badge">ACQP16</span></td>
+                            <td>Puranetihas</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td><span class="qp-badge">ACQP17</span></td>
+                            <td>Rigveda</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><span class="qp-badge">ACQP18</span></td>
+                            <td>Sahitya</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="qp-badge">ACQP19</span></td>
+                            <td>Sahitya (Alankara and Kavya Varga)</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="qp-badge">ACQP20</span></td>
+                            <td>Samveda</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="qp-badge">ACQP21</span></td>
+                            <td>Shukla Yajurveda</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="qp-badge">ACQP22</span></td>
+                            <td>Veda etc.</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td><span class="qp-badge">ACQP23</span></td>
+                            <td>Vedanta</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td><span class="qp-badge">ACQP24</span></td>
+                            <td>Vedanta, Sarvadarshan, Mimansa, Nyaya etc.</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td><span class="qp-badge">ACQP25</span></td>
+                            <td>Vyakaran</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td><span class="qp-badge">ACQP26</span></td>
+                            <td>Vyakarana and Sabdabodha Systems</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            💡 <strong>Selection Tip:</strong> Ensure your choices align with your undergraduate background. For
+            instance, SCQP09 is the standard requirement for most technical postgraduate programs, while MTQP04 is
+            preferred for specialized AI streams.
+        </div>
+    </div>
+
+</body>
+
+</html>

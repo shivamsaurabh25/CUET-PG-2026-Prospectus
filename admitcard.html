@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --danger: #ef4444;
+            --danger-light: #fef2f2;
+            --success: #10b981;
+            --success-light: #f0fdf4;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Persistent Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white; padding: 15px 0;
+            display: flex; justify-content: center; gap: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000;
+        }
+
+        .navbar a {
+            color: white; text-decoration: none; font-weight: 600;
+            font-size: 0.9rem; opacity: 0.7; transition: all 0.3s ease;
+            padding: 8px 16px; border-radius: 20px;
+        }
+
+        .navbar a:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+        .active { opacity: 1 !important; background: rgba(255, 255, 255, 0.2); }
+
+        .container {
+            max-width: 900px; margin: 20px auto;
+            background: var(--white); padding: 50px;
+            border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        h1 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: -1px; }
+
+        /* Checklist Cards */
+        .checklist-container {
+            background: var(--success-light);
+            border: 1px solid #dcfce7;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .checklist-title {
+            color: #166534;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .check-item strong { color: var(--primary); font-size: 0.95rem; }
+        .check-item p { margin: 2px 0 0; font-size: 0.85rem; color: var(--secondary); }
+
+        /* Instruction Grid */
+        .instruction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        
+        .info-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .info-card h4 { margin-top: 0; color: var(--primary); font-size: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
+
+        /* Prohibited Section */
+        .prohibited-panel {
+            background: var(--danger-light);
+            border: 1px solid #fee2e2;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .danger-badge {
+            background: var(--danger);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .prohibited-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .item-tag {
+            background: white;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .rough-work-box {
+            background: #fffbeb;
+            border: 1px dashed var(--warning);
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 650px) {
+            .instruction-grid { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/cities.html">Part 4: Cities</a>
+    <a href="/admitcard.html" class="active">Part 5: Admit Card</a>
+    <a href="/normalization.html">Part 6: Results</a>
+</nav>
+
+<div class="container">
+    <h1>Exam Day Protocols</h1>
+    <p style="text-align: center; color: var(--secondary); margin-bottom: 40px;">Mandatory Documents and Conduct Rules</p>
+
+    <div class="checklist-container">
+        <div class="checklist-title">
+            <span>✅ Entry Checklist (Mandatory)</span>
+        </div>
+        
+        <div class="check-item">
+            <span>📄</span>
+            <div>
+                <strong>e-Admit Card</strong>
+                <p>Printed on A4 size paper from the official NTA website. Must be clear.</p>
+            </div>
+        </div>
+
+        <div class="check-item">
+            <span>✍️</span>
+            <div>
+                <strong>Self-Declaration (Undertaking)</strong>
+                <p>Duly filled in, with thumbprint and photo pasted before reaching the center.</p>
+            </div>
+        </div>
+
+        <div class="check-item">
+            <span>🆔</span>
+            <div>
+                <strong>Original Valid ID</strong>
+                <p>Aadhaar / PAN / Passport / Voter ID / DL. Photocopies or Mobile IDs not accepted.</p>
+            </div>
+        </div>
+
+        <div class="check-item">
+            <span>📸</span>
+            <div>
+                <strong>Passport Photograph</strong>
+                <p>Same as uploaded in application. To be pasted on the attendance sheet.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="instruction-grid">
+        <div class="info-card">
+            <h4>⏰ Timing Rules</h4>
+            <p style="font-size: 0.9rem;">Report <strong>90-120 minutes</strong> prior. The gate closes 30 minutes before the start—<strong>Zero Tolerance</strong> for late arrivals.</p>
+        </div>
+        <div class="info-card">
+            <h4>👕 Dress Code</h4>
+            <p style="font-size: 0.9rem;">Light clothes with half sleeves. No large buttons. <strong>Slippers or sandals</strong> are preferred over shoes.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="prohibited-panel">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; color: #991b1b;">🚫 Barred Items</h3>
+            <span class="danger-badge">Strict Confiscation</span>
+        </div>
+        <div class="prohibited-items">
+            <span class="item-tag">Mobile Phones</span>
+            <span class="item-tag">Smart Watches</span>
+            <span class="item-tag">Calculators</span>
+            <span class="item-tag">Pens/Geometry Boxes</span>
+            <span class="item-tag">Jewelry</span>
+            <span class="item-tag">Food/Water</span>
+            <span class="item-tag">Wallets</span>
+        </div>
+        <p style="font-size: 0.8rem; color: #991b1b; margin-top: 15px; font-style: italic;">Note: Transparent water bottles are permitted for diabetic candidates with prior permission.</p>
+    </div>
+
+    <div class="rough-work-box">
+        <h4 style="margin-top: 0; color: #92400e;">📝 Important: At the Exam Seat</h4>
+        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem;">
+            <li>Rough sheets will be provided; write your <strong>Roll Number</strong> on each.</li>
+            <li>Admit cards must be dropped in the designated box after the exam.</li>
+            <li>Failure to return rough sheets may result in disqualification.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

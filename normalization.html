@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            displayAlign: 'center',
+            chtml: { scale: 0.9 } // Scales the formula slightly down globally
+        };
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --accent: #8b5cf6;
+            --accent-light: #f5f3ff;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --pink: #ec4899;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .navbar a:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .active {
+            opacity: 1 !important;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            width: 90%;
+            /* Ensures container itself is responsive */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        /* Normalization Engine Styling */
+        .normalization-card {
+            background: #fff1f2;
+            border: 1px solid #fecdd3;
+            padding: 30px 15px;
+            /* Reduced side padding for mobile */
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        /* The Fix for Formula Overflow */
+        .formula-display {
+            background: white;
+            padding: 20px 10px;
+            border-radius: 12px;
+            display: block;
+            /* Change to block for better containment */
+            margin: 15px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            color: var(--pink);
+
+            /* CRITICAL OVERFLOW FIXES */
+            overflow-x: auto;
+            /* Adds scrollbar if formula is too wide */
+            overflow-y: hidden;
+            max-width: 100%;
+            /* Keeps it inside normalization-card */
+            box-sizing: border-box;
+        }
+
+        /* Adjusting MathJax font size for small screens */
+        @media (max-width: 480px) {
+            .formula-display {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Stepper UI */
+        .stepper {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .result-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .step-icon {
+            background: var(--accent);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+        }
+
+        .step-content {
+            background: #f8fafc;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+        }
+
+        .step-content strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Timeline & Preview */
+        .preview-box {
+            background: var(--accent-light);
+            border: 1px dashed var(--accent);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .preview-box h4 {
+            margin: 0 0 15px 0;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .list-unstyled {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .list-unstyled li::before {
+            content: '📊';
+            position: absolute;
+            left: 0;
+        }
+
+        .timeline-tag { background: var(--primary); color: white; padding: 4px 12px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; }
+
+        .timeline-container {
+            margin: 30px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .timeline-label {
+            font-weight: 500;
+            color: #1e293b;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile Specific Overrides */
+        @media (max-width: 500px) {
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .timeline-tag {
+                align-self: flex-start;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            .step-icon {
+                width: 35px;
+                height: 35px;
+                border-radius: 10px;
+                font-size: 0.8rem;
+            }
+
+            .normalization-card {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/admitcard.html">Part 5: Admit Card</a>
+        <a href="/normalization.html" class="active">Part 6: Results</a>
+        <a href="/answerkey.html">Part 7: Key Challenge</a>
+    </nav>
+
+    <div class="container">
+        <h1>Results & Normalization</h1>
+        <p style="text-align: center; color: var(--secondary); margin-bottom: 40px;">Ensuring fairness across
+            multi-shift examinations</p>
+
+        <h3 style="display: flex; align-items: center; gap: 10px;">
+            <span>⚖️</span> Why Normalization?
+        </h3>
+        <p>Since the difficulty level might vary across sessions, NTA uses the <strong>Equi-percentile Method</strong>.
+            This converts raw marks into a relative score.</p>
+
+        <div class="normalization-card">
+            <span
+                style="font-weight: 600; color: #9f1239; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">The
+                Normalization Formula</span><br>
+            <div class="formula-display">
+                $$ \text{Percentile} = \frac{100 \times \text{No. of candidates with raw score } \le \text{
+                yours}}{\text{Total candidates in that shift}} $$
+            </div>
+            <p style="font-size: 0.8rem; color: #9f1239; margin: 0;">Calculated to 7 decimal places to prevent ties.</p>
+        </div>
+
+        <div class="stepper">
+            <div class="result-step">
+                <div class="step-icon">01</div>
+                <div class="step-content">
+                    <strong>Raw Score Calculation</strong>
+                    Marks are awarded: <strong>+4</strong> for correct, <strong>-1</strong> for incorrect. Max marks:
+                    300.
+                </div>
+            </div>
+            <div class="result-step">
+                <div class="step-icon">02</div>
+                <div class="step-content">
+                    <strong>Shift-wise Ranking</strong>
+                    Candidates are ranked within their specific shift based on their Raw Scores.
+                </div>
+            </div>
+            <div class="result-step">
+                <div class="step-icon">03</div>
+                <div class="step-content">
+                    <strong>NTA Score (Percentile)</strong>
+                    The formula converts your rank into a percentile, which becomes your final admission merit.
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px; display: flex; align-items: center; gap: 10px;">
+            <span>📅</span> Important Deadlines
+        </h3>
+
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <span class="timeline-label">Provisional Answer Key Challenge</span>
+                <span class="timeline-tag">April 2026</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-label">Final Key & Result Declaration</span>
+                <span class="timeline-tag">May 2026</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-label">University Counseling Starts</span>
+                <span class="timeline-tag">June 2026</span>
+            </div>
+        </div>
+
+        <div class="preview-box">
+            <h4>📄 Scorecard Components</h4>
+            <ul class="list-unstyled">
+                <li><strong>Raw Marks:</strong> Your actual performance tally.</li>
+                <li><strong>NTA Score:</strong> Your shift-adjusted percentile.</li>
+                <li><strong>Rank:</strong> All India Rank (AIR) based on the NTA Score.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

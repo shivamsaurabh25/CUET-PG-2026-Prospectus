@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 8</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --danger: #dc2626;
+            --danger-bg: #fff1f2;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --purple: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Persistent Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white; padding: 15px 0;
+            display: flex; justify-content: center; gap: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000;
+        }
+
+        .navbar a {
+            color: white; text-decoration: none; font-weight: 600;
+            font-size: 0.9rem; opacity: 0.7; transition: all 0.3s ease;
+            padding: 8px 16px; border-radius: 20px;
+        }
+
+        .navbar a:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+        .active { opacity: 1 !important; background: rgba(255, 255, 255, 0.2); }
+
+        .container {
+            max-width: 950px; margin: 20px auto;
+            background: var(--white); padding: 50px;
+            border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        h1 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: -1px; }
+
+        /* Quota Grid Refined */
+        .quota-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+            gap: 20px; 
+            margin: 35px 0; 
+        }
+
+        .quota-card { 
+            background: #f8fafc; 
+            padding: 25px 15px; 
+            border-radius: 16px; 
+            text-align: center; 
+            border: 1px solid #e2e8f0;
+            border-bottom: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .quota-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .quota-card h2 { margin: 0; color: var(--primary); font-size: 1.8rem; font-weight: 600; }
+        .quota-card p { margin: 8px 0 0; font-size: 0.75rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; }
+
+        /* UFM Section - High Alert Style */
+        .ufm-box { 
+            background: var(--danger-bg); 
+            border: 1px solid #fecaca; 
+            padding: 35px; 
+            border-radius: 20px; 
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ufm-box::before {
+            content: '🚫';
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            font-size: 8rem;
+            opacity: 0.05;
+        }
+
+        .ufm-box h3 { color: var(--danger); margin-top: 0; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+        
+        .ufm-list { margin: 15px 0; padding-left: 20px; }
+        .ufm-list li { margin-bottom: 10px; font-size: 0.95rem; }
+
+        .punishment { 
+            background: var(--danger); 
+            color: white; 
+            font-weight: 600; 
+            margin-top: 20px; 
+            padding: 15px 20px; 
+            border-radius: 12px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+        }
+
+        /* Disability Provisions */
+        .pwd-section {
+            background: var(--primary-light);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #dbeafe;
+        }
+
+        .pwd-section h3 { margin-top: 0; color: var(--primary); }
+
+        .extra-time-badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            .quota-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/answerkey.html">Part 7: Key Challenge</a>
+    <a href="/reservation.html" class="active">Part 8: Quotas</a>
+    <a href="/final.html">Part 9: Support</a>
+</nav>
+
+<div class="container">
+    <h1>Policies & Exam Ethics</h1>
+    <p style="text-align: center; color: var(--secondary); margin-bottom: 10px;">Reservation Framework and Conduct Guidelines</p>
+
+    <h3 style="margin-top: 40px; display: flex; align-items: center; gap: 10px;">🏛️ Central Reservation Quotas</h3>
+    <p style="font-size: 0.95rem; color: var(--secondary);">Following Govt. of India mandates, seats in Central Universities are allocated as per the following percentages:</p>
+    
+    <div class="quota-grid">
+        <div class="quota-card"><h2>15%</h2><p>SC</p></div>
+        <div class="quota-card"><h2>7.5%</h2><p>ST</p></div>
+        <div class="quota-card"><h2>27%</h2><p>OBC (NCL)</p></div>
+        <div class="quota-card"><h2>10%</h2><p>Gen-EWS</p></div>
+        <div class="quota-card" style="border-color: var(--purple);"><h2>5%*</h2><p>PwD</p></div>
+    </div>
+    <p style="font-size: 0.8rem; color: var(--secondary);">*PwD reservation is Horizontal (applicable across all categories).</p>
+
+    <div class="ufm-box">
+        <h3>🚫 Unfair Means Practices</h3>
+        <p>Any activity that grants an undue advantage is treated as <strong>Unfair Means (UFM)</strong>. This includes:</p>
+        <ul class="ufm-list">
+            <li>Possession of <strong>electronic gadgets</strong> or paper chits.</li>
+            <li>Impersonation or falsifying identity documents.</li>
+            <li>Assisting other candidates or technical tampering.</li>
+            <li>Contacting anyone outside the hall during exam hours.</li>
+        </ul>
+        <div class="punishment">
+            ⚠️ CONSEQUENCE: Immediate cancellation of result, debarment for up to 3 years from NTA exams, and potential legal prosecution.
+        </div>
+    </div>
+
+    <div class="pwd-section">
+        <h3>♿ PwD / PwBD Support</h3>
+        <p style="margin-bottom: 10px;">Candidates with benchmark disabilities (40% or more) are entitled to:</p>
+        <div class="extra-time-badge">
+            ⏱️ 20 mins Compensatory Time per hour
+        </div>
+        <ul style="padding-left: 20px; font-size: 0.95rem; margin-top: 15px;">
+            <li>Provision for a <strong>Scribe</strong> (must be opted for in the application form).</li>
+            <li>Facility to use a personal wheelchair (subject to security check).</li>
+            <li>Priority access and dedicated seating at the test center.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

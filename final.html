@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --danger: #ef4444;
+            --danger-light: #fff1f2;
+            --success: #10b981;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Persistent Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white; padding: 15px 0;
+            display: flex; justify-content: center; gap: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000;
+        }
+
+        .navbar a {
+            color: white; text-decoration: none; font-weight: 600;
+            font-size: 0.9rem; opacity: 0.7; transition: all 0.3s ease;
+            padding: 8px 16px; border-radius: 20px;
+        }
+
+        .navbar a:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+        .active { opacity: 1 !important; background: rgba(255, 255, 255, 0.2); }
+
+        .container {
+            max-width: 900px; margin: 20px auto;
+            background: var(--white); padding: 50px;
+            border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        h1 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: -1px; }
+
+        /* Error Prevention Card */
+        .mistake-card {
+            background: var(--danger-light);
+            border: 1px solid #fecaca;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .mistake-card h3 { color: #b91c1c; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+
+        /* Checklist Section */
+        .checklist-group { margin: 40px 0; }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            padding: 12px 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .check-icon { color: var(--success); font-size: 1.2rem; }
+
+        /* Support Grid */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        
+        .contact-box {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .contact-box h4 { margin: 0 0 15px 0; color: var(--primary); border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
+        .contact-box p { margin: 5px 0; font-family: monospace; font-weight: 600; font-size: 1rem; }
+
+        .scribe-notice {
+            background: #fffbeb;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px dashed var(--warning);
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 650px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/answerkey.html">Part 7: Key Challenge</a>
+    <a href="/reservation.html">Part 8: Quotas</a>
+    <a href="#" class="active">Part 9: Support</a>
+</nav>
+
+<div class="container">
+    <h1>Final Steps & Support</h1>
+    <p style="text-align: center; color: var(--secondary); margin-bottom: 40px;">Closing your application and seeking technical help</p>
+
+    <div class="mistake-card">
+        <h3>❌ Rejection Triggers</h3>
+        <ul style="padding-left: 20px; margin: 0; font-size: 0.95rem;">
+            <li style="margin-bottom: 8px;"><strong>Dual Registration:</strong> Submitting multiple forms will lead to all applications being canceled.</li>
+            <li style="margin-bottom: 8px;"><strong>Certificate Validity:</strong> OBC-NCL and EWS certificates must be issued <strong>on or after April 1, 2025</strong>.</li>
+            <li style="margin-bottom: 8px;"><strong>Photo Quality:</strong> Ensure the <strong>Live Photograph</strong> upload captures 80% face visibility with a white background.</li>
+            <li><strong>The Confirmation Page:</strong> If you cannot download this PDF, your payment was <strong>NOT</strong> successful.</li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 style="color: var(--primary); margin-bottom: 20px;">✅ Final Submission Checklist</h3>
+        <div class="checklist-item"><span class="check-icon">✔</span> Identity verified via Aadhaar (or other valid Photo ID).</div>
+        <div class="checklist-item"><span class="check-icon">✔</span> Subjects selected based on target University's Mapping.</div>
+        <div class="checklist-item"><span class="check-icon">✔</span> Exam Cities limited to your Permanent/Present address state.</div>
+        <div class="checklist-item"><span class="check-icon">✔</span> Confirmation Page saved on Google Drive/Email.</div>
+    </div>
+
+    
+
+    <div class="contact-grid">
+        <div class="contact-box">
+            <h4>📞 Helpline Numbers</h4>
+            <p>011-40759000</p>
+            <p>011-69227700</p>
+            <small style="color: var(--secondary);">Available 09:30 AM to 05:30 PM</small>
+        </div>
+        <div class="contact-box">
+            <h4>📧 Email & Portal</h4>
+            <p style="font-size: 0.9rem;">helpdesk-cuetpg@nta.ac.in</p>
+            <p style="font-size: 0.9rem;">exams.nta.nic.in/cuet-pg/</p>
+            <small style="color: var(--secondary);">Official NTA Correspondence</small>
+        </div>
+    </div>
+
+    <div class="scribe-notice">
+        <strong>⚠️ PwBD Scribe Facility:</strong> If you require a scribe, you <strong>must</strong> upload your Disability Certificate (PDF, 50kb-300kb) and select the scribe option during registration. NTA generally provides scribes; personal scribes require prior approval.
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --accent-light: #fff7ed;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --slate: #334155;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Persistent Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white; padding: 15px 0;
+            display: flex; justify-content: center; gap: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000;
+        }
+
+        .navbar a {
+            color: white; text-decoration: none; font-weight: 600;
+            font-size: 0.9rem; opacity: 0.7; transition: all 0.3s ease;
+            padding: 8px 16px; border-radius: 20px;
+        }
+
+        .navbar a:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+        .active { opacity: 1 !important; background: rgba(255, 255, 255, 0.2); }
+
+        .container {
+            max-width: 950px; margin: 20px auto;
+            background: var(--white); padding: 50px;
+            border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        h1 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: -1px; }
+
+        /* Challenge Info Box */
+        .challenge-card {
+            background: var(--accent-light);
+            border: 1px solid #fed7aa;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .tag-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .tag { 
+            font-size: 0.7rem; text-transform: uppercase; font-weight: 700; 
+            background: var(--accent); color: white; padding: 4px 12px; border-radius: 50px; 
+        }
+
+        .fee-badge {
+            background: white;
+            color: #c2410c;
+            padding: 10px 20px;
+            border-radius: 12px;
+            display: inline-block;
+            font-weight: 600;
+            border: 1px solid #fdba74;
+            margin: 15px 0;
+        }
+
+        /* Scoring Logic Table */
+        .logic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .logic-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .logic-card h4 { margin-top: 0; color: var(--primary); font-size: 1rem; }
+
+        /* Result Policy Card */
+        .policy-box {
+            background: #f0f9ff;
+            border-left: 6px solid var(--primary);
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 40px;
+        }
+
+        .policy-box h3 { margin-top: 0; color: #0369a1; }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        @media (max-width: 700px) {
+            .logic-grid { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/normalization.html">Part 6: Results</a>
+    <a href="/answerkey.html" class="active">Part 7: Key Challenge</a>
+    <a href="/reservation.html">Part 8: Quotas</a>
+</nav>
+
+<div class="container">
+    <h1>Post-Exam Procedures</h1>
+    <p style="text-align: center; color: var(--secondary); margin-bottom: 40px;">Reviewing your performance and finality of scores</p>
+
+    <div class="challenge-card">
+        <div class="tag-row">
+            <span class="tag">Active Window</span>
+            <span style="font-size: 0.85rem; color: #9a3412; font-weight: 600;">Open for 48-72 Hours Only</span>
+        </div>
+        <h3 style="margin: 0; color: #9a3412;">🔑 Answer Key Challenge</h3>
+        <p>NTA will release your <strong>Recorded Responses</strong> along with the <strong>Provisional Answer Key</strong>. If you believe an answer provided by NTA is incorrect, you can challenge it.</p>
+        
+        <div class="fee-badge">
+            Processing Fee: ₹ 200 / Question
+        </div>
+        <p style="font-size: 0.85rem; color: #9a3412; margin: 0;"><em>Note: The fee is non-refundable unless the challenge is officially accepted.</em></p>
+    </div>
+
+    <h3 style="margin-top: 40px;">⚖️ Expert Review Logic</h3>
+    <div class="logic-grid">
+        <div class="logic-card">
+            <h4>❌ Dropped Questions</h4>
+            <p style="font-size: 0.9rem; margin: 0;">If a question is dropped due to a technical/content error, <strong>+4 marks</strong> are awarded to all who <strong>attempted</strong> it.</p>
+        </div>
+        <div class="logic-card">
+            <h4>✅ Multiple Correct Options</h4>
+            <p style="font-size: 0.9rem; margin: 0;">If two options are found correct, candidates who selected <strong>either one</strong> will receive the full +4 marks.</p>
+        </div>
+    </div>
+
+    <div class="policy-box">
+        <h3>📜 Result Integrity Policy</h3>
+        <ul style="padding-left: 20px; margin-bottom: 0;">
+            <li style="margin-bottom: 12px;"><strong>No Re-evaluation:</strong> Since the evaluation is handled by highly sensitive software with multiple checks, requests for re-checking results are not entertained.</li>
+            <li style="margin-bottom: 12px;"><strong>Weeding Out:</strong> All records (omr images/responses) are destroyed <strong>90 days</strong> after the result is declared.</li>
+            <li><strong>Data Privacy:</strong> Individual scores are shared only with the universities selected by the candidate during registration.</li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        💡 <strong>Pro Tip:</strong> Ensure you download and save your <strong>Response Sheet</strong> as soon as it is released. It disappears from the portal once the result is finalized.
+    </div>
+</div>
+
+</body>
+</html>

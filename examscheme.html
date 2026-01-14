@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUET PG 2026 Interactive Guide - Part 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #64748b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        /* Persistent Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            color: white; padding: 15px 0;
+            display: flex; justify-content: center; gap: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000;
+        }
+
+        .navbar a {
+            color: white; text-decoration: none; font-weight: 600;
+            font-size: 0.9rem; opacity: 0.7; transition: all 0.3s ease;
+            padding: 8px 16px; border-radius: 20px;
+        }
+
+        .navbar a:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+        .active { opacity: 1 !important; background: rgba(255, 255, 255, 0.2); }
+
+        .container {
+            max-width: 900px; margin: 20px auto;
+            background: var(--white); padding: 50px;
+            border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        h1 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: -1px; }
+
+        /* Modern Stats Bar */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 20px; margin: 40px 0;
+        }
+
+        .stat-card {
+            background: #f8fafc; border: 1px solid #e2e8f0;
+            padding: 25px; border-radius: 16px; text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        .stat-card i { font-size: 1.5rem; display: block; margin-bottom: 10px; }
+        .stat-card h4 { margin: 0; color: var(--secondary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-card p { margin: 8px 0 0; font-size: 1.1rem; font-weight: 600; color: var(--primary); }
+
+        /* Marking Table Refined */
+        .marking-container {
+            background: #ffffff; border-radius: 16px;
+            border: 1px solid #e2e8f0; overflow: hidden; margin: 30px 0;
+        }
+
+        .marking-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 25px; border-bottom: 1px solid #f1f5f9;
+        }
+
+        .marking-row:last-child { border-bottom: none; }
+        .marking-row:hover { background: var(--primary-light); }
+
+        .label-group { display: flex; flex-direction: column; }
+        .label-main { font-weight: 600; color: #1e293b; }
+        .label-sub { font-size: 0.8rem; color: var(--secondary); }
+
+        .badge {
+            padding: 6px 14px; border-radius: 10px; font-weight: 700; font-size: 0.9rem;
+        }
+        .badge-pos { background: #dcfce7; color: var(--success); }
+        .badge-neg { background: #fee2e2; color: var(--danger); }
+        .badge-neu { background: #f1f5f9; color: var(--secondary); }
+
+        /* Info Boxes */
+        .info-section {
+            background: #eff6ff; border-radius: 16px; padding: 25px;
+            border-left: 6px solid var(--primary); margin: 40px 0;
+        }
+
+        .note-card {
+            background: #fff7ed; border: 1px solid #ffedd5;
+            padding: 20px; border-radius: 12px; font-size: 0.9rem;
+            display: flex; gap: 15px; align-items: flex-start;
+        }
+
+        @media (max-width: 650px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/">Part 1: Dates & Fees</a>
+    <a href="/examscheme.html" class="active">Part 2: Exam Scheme</a>
+    <a href="/qpcode.html">Part 3: QP Codes</a>
+</nav>
+
+<div class="container">
+    <h1>Examination Scheme</h1>
+    <p style="text-align: center; color: var(--secondary); margin-bottom: 40px;">Mode, Structure, and Evaluation Criteria</p>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h4>🖥️ Mode</h4>
+            <p>Computer Based (CBT)</p>
+        </div>
+        <div class="stat-card">
+            <h4>❓ Questions</h4>
+            <p>75 Domain MCQs</p>
+        </div>
+        <div class="stat-card">
+            <h4>⏱️ Duration</h4>
+            <p>1 Hour 30 Mins</p>
+        </div>
+    </div>
+
+    <h3 style="color: var(--primary); margin-bottom: 15px;">📊 Marking System</h3>
+    <div class="marking-container">
+        <div class="marking-row">
+            <div class="label-group">
+                <span class="label-main">Correct Response</span>
+                <span class="label-sub">For every right answer</span>
+            </div>
+            <span class="badge badge-pos">+4 Marks</span>
+        </div>
+        <div class="marking-row">
+            <div class="label-group">
+                <span class="label-main">Incorrect Response</span>
+                <span class="label-sub">Negative marking applied</span>
+            </div>
+            <span class="badge badge-neg">-1 Mark</span>
+        </div>
+        <div class="marking-row">
+            <div class="label-group">
+                <span class="label-main">Unanswered / Review</span>
+                <span class="label-sub">No marks deducted</span>
+            </div>
+            <span class="badge badge-neu">0 Marks</span>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3 style="margin-top: 0; color: var(--primary);">🌐 Medium of Paper</h3>
+        <p style="margin-bottom: 0;">The CUET (PG) 2026 will be conducted in <strong>English and Hindi (Bilingual)</strong>. However, please note these exceptions:</p>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+            <li><strong>Language/Acharya:</strong> In the specific language only.</li>
+            <li><strong>Science/M.Tech:</strong> Conducted in <strong>English only</strong>.</li>
+        </ul>
+    </div>
+
+    <div class="note-card">
+        <span style="font-size: 1.2rem;">⚠️</span>
+        <div>
+            <strong>Authority Rule:</strong> If there is any discrepancy in the Hindi translation, the <strong>English version</strong> of the question will be considered final and correct.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
